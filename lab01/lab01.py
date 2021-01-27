@@ -22,7 +22,15 @@ def captured_output():
 
 # implement this function
 def is_perfect(n):
-    pass
+    sum=1
+    if(n==1):
+      return(False)
+    for x in range(2,n):
+      if(n%x)==0:
+        sum+=x
+    if(sum==n):
+      return(True)
+    return(False)
 
 # (3 points)
 def test1():
@@ -40,7 +48,12 @@ def test1():
 
 # implement this function
 def multiples_of_3_and_5(n):
-    pass
+    sum=0
+    for i in range(1, n):
+      if i % 3 == 0 or i % 5 == 0:
+          sum+=i
+
+    return sum
 
 # (3 points)
 def test2():
@@ -53,7 +66,16 @@ def test2():
 # EXERCISE 3
 #################################################################################
 def integer_right_triangles(p):
-    pass
+     triples = []
+     for a in range(1, p):
+      for b in range(a, p-a):     
+            c = p - (a + b)
+            if a**2 + b**2 == c**2:
+                 triples.append((a, b, c)) 
+            elif a**2 + b**2 > c**2:
+                 break 
+
+     return len(triples)
 
 def test3():
     tc = unittest.TestCase()
@@ -67,7 +89,33 @@ def test3():
 
 # implement this function
 def gen_pattern(chars):
-    pass
+  newWord=''
+  search=len(word)*2 + (len(word)-1)*2-1
+  if(len(word)==1):
+    return(word)
+  y=len(word)-2
+  while(y>=-1):
+    line=""
+    for x in range(len(word)-1,y,-1):
+      line+=word[x]
+    for x in range(y+2,len(word)):
+      line+=word[x]
+    line='.'.join(line)
+    line=line.center(search,'.')
+    print(line)
+    y=y-1
+
+  y=0
+  while(y<len(word)-1):
+    line=""
+    for x in range(len(word)-1,y,-1):
+      line+=word[x]
+    for x in range(y+2,len(word)):
+      line+=word[x]
+    line='.'.join(line)
+    line=line.center(search,'.')
+    print(line)
+    y=y+1
 
 def test4():
     tc = unittest.TestCase()
