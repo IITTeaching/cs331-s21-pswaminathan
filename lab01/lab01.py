@@ -88,34 +88,35 @@ def test3():
 #################################################################################
 
 # implement this function
-def gen_pattern(chars):
+def gen_pattern(word):
   newWord=''
   search=len(word)*2 + (len(word)-1)*2-1
   if(len(word)==1):
-    return(word)
-  y=len(word)-2
-  while(y>=-1):
-    line=""
-    for x in range(len(word)-1,y,-1):
-      line+=word[x]
-    for x in range(y+2,len(word)):
-      line+=word[x]
-    line='.'.join(line)
-    line=line.center(search,'.')
-    print(line)
-    y=y-1
+    print(word)
+  else:
+    y=len(word)-2
+    while(y>=-1):
+      line=""
+      for x in range(len(word)-1,y,-1):
+        line+=word[x]
+      for x in range(y+2,len(word)):
+        line+=word[x]
+      line='.'.join(line)
+      line=line.center(search,'.')
+      print(line)
+      y=y-1
 
-  y=0
-  while(y<len(word)-1):
-    line=""
-    for x in range(len(word)-1,y,-1):
-      line+=word[x]
-    for x in range(y+2,len(word)):
-      line+=word[x]
-    line='.'.join(line)
-    line=line.center(search,'.')
-    print(line)
-    y=y+1
+    y=0
+    while(y<len(word)-1):
+      line=""
+      for x in range(len(word)-1,y,-1):
+        line+=word[x]
+      for x in range(y+2,len(word)):
+        line+=word[x]
+      line='.'.join(line)
+      line=line.center(search,'.')
+      print(line)
+      y=y+1
 
 def test4():
     tc = unittest.TestCase()
