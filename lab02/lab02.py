@@ -43,7 +43,6 @@ def compute_ngrams(toks, n=2):
       dict[i[0]].append(tuple(i[1:]))
     else:
        dict[i[0]]=[i[1:]]
-  print(dict)
   return(dict)
 
 def test1():
